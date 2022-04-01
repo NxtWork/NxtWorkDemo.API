@@ -1,9 +1,11 @@
 package com.app.services;
 
-import com.app.model.Company;
-import com.app.model.Contacts;
-import com.app.model.Requirement;
-import com.app.model.Vacancy;
+import com.app.dao.VacancyDao;
+import com.app.model.jobs.Company;
+import com.app.model.common.Contacts;
+import com.app.model.jobs.Requirement;
+import com.app.model.jobs.Vacancy;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -12,6 +14,9 @@ import java.util.UUID;
 
 @Service
 public class VacancyService {
+
+    @Autowired
+    private VacancyDao vacancyDao;
 
     private List<Vacancy> Vacancies;
     private List<Company> Companies;
@@ -38,11 +43,22 @@ public class VacancyService {
                 new Contacts("371111","a.a@gmail.com","riga"),requirements,
                 new Company(UUID.randomUUID(),"NxtWork","IT","Good company",8.8,new Contacts("371111","a.a@gmail.com","riga")),UUID.randomUUID(), "11USD"));
 
+        Vacancies.add(new Vacancy(UUID.randomUUID(),"Teacher","teach me","https://www.premiumclean.co.nz/wp-content/uploads/lady_cleaner_prof-min.png",
+                new Contacts("371111","a.a@gmail.com","riga"),requirements,
+                new Company(UUID.randomUUID(),"NxtWork","IT","Good company",8.8,new Contacts("371111","teacher.a@gmail.com","riga")),UUID.randomUUID(), "11USD"));
+
+        Vacancies.add(new Vacancy(UUID.randomUUID(),"Director","money","https://www.premiumclean.co.nz/wp-content/uploads/lady_cleaner_prof-min.png",
+                new Contacts("371111","a.a@gmail.com","riga"),requirements,
+                new Company(UUID.randomUUID(),"NxtWork","IT","Good company",8.8,new Contacts("371111","director.a@gmail.com","riga")),UUID.randomUUID(), "11USD"));
+
+
     }
 
     public List<Vacancy> getVacancies(){
         return Vacancies;
     }
 
-
+    public List<Vacancy> test() {
+        return vacancyDao.getVacancy();
+    }
 }
