@@ -1,14 +1,14 @@
-com/app/model/Company.java
- com.app.model.Company
-com/app/NxtWorkApp.java
- com.app.NxtWorkApp
-com/app/model/Contacts.java
- com.app.model.Contacts
 com/app/model/Requirement.java
  com.app.model.Requirement
-com/app/services/VacancyService.java
- com.app.services.VacancyService
 com/app/model/Vacancy.java
  com.app.model.Vacancy
+com/app/model/Contacts.java
+ com.app.model.Contacts
+com/app/NxtWorkApp.java
+ com.app.NxtWorkApp
+com/app/model/Company.java
+ com.app.model.Company
+com/app/services/VacancyService.java
+ com.app.services.VacancyService
 com/app/controllers/VacancyController.java
  com.app.controllers.VacancyController
