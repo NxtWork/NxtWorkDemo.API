@@ -10,22 +10,22 @@ public class User {
     private String firstName;
     private String lastName;
     private Date dob;
-    private Contacts contacts;
-    private Cv cv;
+    private UUID contacts_id;
+    private UUID cv_id;
     private UUID cvId;
     private String password;
-    private Preferences preferences;
+    private UUID preferences_id;
 
-    public User(UUID id, String firstName, String lastName, Date dob, Contacts contacts, Cv cv, UUID cvId ,String password, Preferences preferences) {
+    public User(UUID id, String firstName, String lastName, Date dob, UUID contacts_id, UUID cv_id, UUID cvId, String password, UUID preferences_id) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
-        this.contacts = contacts;
-        this.cv = cv;
+        this.contacts_id = contacts_id;
+        this.cv_id = cv_id;
         this.cvId = cvId;
         this.password = password;
-        this.preferences = preferences;
+        this.preferences_id = preferences_id;
     }
 
     public UUID getId() {
@@ -60,20 +60,20 @@ public class User {
         this.dob = dob;
     }
 
-    public Contacts getContacts() {
-        return contacts;
+    public UUID getContacts_id() {
+        return contacts_id;
     }
 
-    public void setContacts(Contacts contacts) {
-        this.contacts = contacts;
+    public void setContacts_id(UUID contacts_id) {
+        this.contacts_id = contacts_id;
     }
 
-    public Cv getCv() {
-        return cv;
+    public UUID getCv_id() {
+        return cv_id;
     }
 
-    public void setCv(Cv cv) {
-        this.cv = cv;
+    public void setCv_id(UUID cv_id) {
+        this.cv_id = cv_id;
     }
 
     public UUID getCvId() {
@@ -92,11 +92,11 @@ public class User {
         this.password = password;
     }
 
-    public Preferences getPreferences() {
-        return preferences;
+    public UUID getPreferences_id() {
+        return preferences_id;
     }
 
-    public void setPreferences(Preferences preferences) {
-        this.preferences = preferences;
+    public void setPreferences_id(UUID preferences_id) {
+        this.preferences_id = preferences_id;
     }
 }

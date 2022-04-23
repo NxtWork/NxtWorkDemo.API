@@ -10,15 +10,15 @@ public class Company {
     private String industry;
     private String description;
     private double rating;
-    private Contacts contacts;
+    private UUID contacts_id;
 
-    public Company(UUID id, String name, String industry, String description, double rating, Contacts contacts) {
+    public Company(UUID id, String name, String industry, String description, double rating, UUID contacts_id) {
         this.id = id;
         this.name = name;
         this.industry = industry;
         this.description = description;
         this.rating = rating;
-        this.contacts = contacts;
+        this.contacts_id = contacts_id;
     }
 
     public UUID getId() {
@@ -61,11 +61,11 @@ public class Company {
         this.rating = rating;
     }
 
-    public Contacts getContacts() {
-        return contacts;
+    public UUID getContacts_id() {
+        return contacts_id;
     }
 
-    public void setContacts(Contacts contacts) {
-        this.contacts = contacts;
+    public void setContacts_id(UUID contacts_id) {
+        this.contacts_id = contacts_id;
     }
 }

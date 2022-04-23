@@ -37,9 +37,7 @@ public class VacancyDao {
 
         vacancy.setContacts(contacts1);
 
-        System.out.println(contacts1.getEmail());
-
-       // ResultSet requirements = rs.getArray("requirements").getRes;
+        //ResultSet requirements = rs.getArray("requirements").getResultSet();
 
         return vacancy;
 
@@ -49,4 +47,5 @@ public class VacancyDao {
         RowMapper<Vacancy> rowMapper = (rs, rowNumber) -> mapVacancy(rs);
         return jdbcTemplate.query("SELECT * FROM vacancy", rowMapper);    //query - шлет запрос в базу данных и делает что то с данными
     }
+
 }

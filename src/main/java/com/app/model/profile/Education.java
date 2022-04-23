@@ -1,11 +1,15 @@
 package com.app.model.profile;
 
+import java.util.UUID;
+
 public class Education {
+    private UUID id;
     private String institution;
     private String degree;
     private String duration;
 
-    public Education(String institution, String degree, String duration) {
+    public Education(UUID id, String institution, String degree, String duration) {
+        this.id = id;
         this.institution = institution;
         this.degree = degree;
         this.duration = duration;
@@ -33,5 +37,13 @@ public class Education {
 
     public void setDuration(String duration) {
         this.duration = duration;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 }

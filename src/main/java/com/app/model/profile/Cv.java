@@ -6,18 +6,18 @@ import java.util.UUID;
 public class Cv {
     private UUID id;
     private String description;
-    private List<Experience> experience;
-    private List<Education> education;
-    private List<Interest> interests;
-    private List<CustomEntry> customEntries;
+    private UUID experience_id;
+    private UUID education_id;
+    private UUID interests_id;
+    private UUID customEntries_id;
 
-    public Cv(UUID id, String description, List<Experience> experience, List<Education> education, List<Interest> interests, List<CustomEntry> customEntries) {
+    public Cv(UUID id, String description, UUID experience_id, UUID education_id, UUID interests_id, UUID customEntries_id) {
         this.id = id;
         this.description = description;
-        this.experience = experience;
-        this.education = education;
-        this.interests = interests;
-        this.customEntries = customEntries;
+        this.experience_id = experience_id;
+        this.education_id = education_id;
+        this.interests_id = interests_id;
+        this.customEntries_id = customEntries_id;
     }
 
     public UUID getId() {
@@ -36,35 +36,35 @@ public class Cv {
         this.description = description;
     }
 
-    public List<Experience> getExperience() {
-        return experience;
+    public UUID getExperience_id() {
+        return experience_id;
     }
 
-    public void setExperience(List<Experience> experience) {
-        this.experience = experience;
+    public void setExperience_id(UUID experience_id) {
+        this.experience_id = experience_id;
     }
 
-    public List<Education> getEducation() {
-        return education;
+    public UUID getEducation_id() {
+        return education_id;
     }
 
-    public void setEducation(List<Education> education) {
-        this.education = education;
+    public void setEducation_id(UUID education_id) {
+        this.education_id = education_id;
     }
 
-    public List<Interest> getInterests() {
-        return interests;
+    public UUID getInterests_id() {
+        return interests_id;
     }
 
-    public void setInterests(List<Interest> interests) {
-        this.interests = interests;
+    public void setInterests_id(UUID interests_id) {
+        this.interests_id = interests_id;
     }
 
-    public List<CustomEntry> getCustomEntries() {
-        return customEntries;
+    public UUID getCustomEntries_id() {
+        return customEntries_id;
     }
 
-    public void setCustomEntries(List<CustomEntry> customEntries) {
-        this.customEntries = customEntries;
+    public void setCustomEntries_id(UUID customEntries_id) {
+        this.customEntries_id = customEntries_id;
     }
 }

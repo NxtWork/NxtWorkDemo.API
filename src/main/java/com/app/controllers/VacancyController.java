@@ -22,9 +22,9 @@ public class VacancyController {
     @GetMapping("/getVacancies")
     public List<Vacancy> getVacancies(){
         try {
-            vacancyService.test();
-            //return vacancyService.getVacancies();
-            return vacancyService.test();
+            //vacancyService.test();
+            return vacancyService.getVacancies();
+            //return vacancyService.test();
         } catch(Exception e) {
             e.printStackTrace();
             return null;

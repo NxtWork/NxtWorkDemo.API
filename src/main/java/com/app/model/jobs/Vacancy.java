@@ -10,23 +10,21 @@ public class Vacancy {
     private String title;
     private String description;
     private String thumbnail_image;
-    private Contacts contacts;
-    private List<Requirement> requirements;
-    private Company company;
-    private UUID companyId;
+    private UUID contacts_id;
+    private UUID requirements_id;
+    private UUID company_id;
     private String salary;
 
     public Vacancy() {}
 
-    public Vacancy(UUID id, String title, String description, String thumbnail_image, Contacts contacts, List<Requirement> requirements, Company company, UUID companyId, String salary) {
+    public Vacancy(UUID id, String title, String description, String thumbnail_image, UUID contacts_id, UUID requirements_id, UUID company_id, UUID companyId, String salary) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.thumbnail_image = thumbnail_image;
-        this.contacts = contacts;
-        this.requirements = requirements;
-        this.company = company;
-        this.companyId = companyId;
+        this.contacts_id = contacts_id;
+        this.requirements_id = requirements_id;
+        this.company_id = company_id;
         this.salary = salary;
     }
 
@@ -62,36 +60,28 @@ public class Vacancy {
         this.thumbnail_image = thumbnail_image;
     }
 
-    public Contacts getContacts() {
-        return contacts;
+    public UUID getContacts_id() {
+        return contacts_id;
     }
 
-    public void setContacts(Contacts contacts) {
-        this.contacts = contacts;
+    public void setContacts_id(UUID contacts_id) {
+        this.contacts_id = contacts_id;
     }
 
-    public List<Requirement> getRequirements() {
-        return requirements;
+    public UUID getRequirements_id() {
+        return requirements_id;
     }
 
-    public void setRequirements(List<Requirement> requirements) {
-        this.requirements = requirements;
+    public void setRequirements_id(UUID requirements_id) {
+        this.requirements_id = requirements_id;
     }
 
-    public Company getCompany() {
-        return company;
+    public UUID getCompany_id() {
+        return company_id;
     }
 
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-    public UUID getCompanyId() {
-        return companyId;
-    }
-
-    public void setCompanyId(UUID companyId) {
-        this.companyId = companyId;
+    public void setCompany_id(UUID company_id) {
+        this.company_id = company_id;
     }
 
     public String getSalary() {

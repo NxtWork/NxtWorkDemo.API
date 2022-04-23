@@ -1,10 +1,22 @@
 package com.app.model.jobs;
 
+import java.util.UUID;
+
 public class Requirement {
+    private UUID id;
     private String key;
     private String value;
 
+    ////FOR TESTING
     public Requirement(String key, String value) {
+        this.key = key;
+        this.value = value;
+    }
+    ////
+
+
+    public Requirement(UUID id, String key, String value) {
+        this.id = id;
         this.key = key;
         this.value = value;
     }
@@ -23,5 +35,13 @@ public class Requirement {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 }
