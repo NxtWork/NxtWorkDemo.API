@@ -1,14 +1,12 @@
 package com.app.controllers;
 
+import com.app.model.CvVacancy.CvLvVacancy;
 import com.app.model.jobs.Vacancy;
+import com.app.services.DataScraperCvLv;
 import com.app.services.VacancyService;
-import com.scraper.model.CvVacancy;
-import com.scraper.service.CVOnlineScraper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,7 +19,7 @@ public class VacancyController {
     private VacancyService vacancyService;
 
     @Autowired
-    private CVOnlineScraper cvOnlineScraper;
+    private DataScraperCvLv dataScraperCvLv;
 
     @GetMapping("/getVacancies")
     public List<Vacancy> getVacancies(){
@@ -36,10 +34,13 @@ public class VacancyController {
     }
 
     @GetMapping("/getScraped")
-    public List<CvVacancy> getScrapedVacancies(){
+    public List<CvLvVacancy> getScrapedVacancies(){
+        List<CvLvVacancy> test = dataScraperCvLv.ParseFromCvLv();
+        System.out.println(test.size());
         try {
             //vacancyService.test();
-            return cvOnlineScraper.ParseFromPage("https://cv.lv/lv/search?limit=20&offset=0&isHourlySalary=false");
+            return dataScraperCvLv.ParseFromCvLv();
+
             //return vacancyService.test();
         } catch(Exception e) {
             e.printStackTrace();

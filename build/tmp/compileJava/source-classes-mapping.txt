@@ -1,9 +1,13 @@
+com/app/services/DataScraperCvLv.java
+ com.app.services.DataScraperCvLv
 com/app/model/profile/Education.java
  com.app.model.profile.Education
 com/app/model/jobs/Vacancy.java
  com.app.model.jobs.Vacancy
 com/scraper/service/CVOnlineScraper.java
  com.scraper.service.CVOnlineScraper
+com/app/model/CvVacancy/CvLvVacancy.java
+ com.app.model.CvVacancy.CvLvVacancy
 com/app/services/UserService.java
  com.app.services.UserService
 com/app/model/profile/Cv.java

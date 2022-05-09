@@ -28,6 +28,7 @@ public class Vacancy {
         this.salary = salary;
     }
 
+
     public UUID getId() {
         return id;
     }
