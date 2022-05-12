@@ -1,8 +1,11 @@
 package com.app.services;
 
 
-import com.app.model.jobs.Company;
+import com.app.dto.VacancyDto;
+import com.app.dto.inapp.PlatformVacancyDto;
+import com.app.dto.thirdparty.CvLvVacancyDto;
 import com.app.model.common.Contacts;
+import com.app.model.jobs.Company;
 import com.app.model.jobs.Requirement;
 import com.app.model.jobs.Vacancy;
 import com.github.javafaker.Faker;
@@ -16,9 +19,16 @@ import java.util.UUID;
 @Service
 public class VacancyService {
 
+    @Autowired
+    private DataScraperCvLv dataScraperCvLv;
+
+    @Autowired
+    private CompanyService companyService;
+
+    @Autowired
+    private ContactsService contactsService;
 
     private List<Vacancy> Vacancies;
-    private List<Company> Companies;
     private List<Requirement> requirements;
 
     public VacancyService() {
@@ -37,7 +47,7 @@ public class VacancyService {
         vacancy.setTitle(faker.job().title());
         vacancy.setDescription(faker.lorem().paragraph(3));
         vacancy.setThumbnail_image("https://www.iamexpat.nl/sites/default/files/styles/ogimage_thumb/public/cleaners-house-cleaning-services-netherlands_8.jpg");
-        vacancy.setContacts_id(UUID.randomUUID());
+        vacancy.setContacts_id(UUID.fromString("b3340266-d226-11ec-9d64-0242ac120002"));
         vacancy.setCompany_id(UUID.fromString("7603923a-a887-11ec-b909-0242ac120002"));
         vacancy.setRequirements_id(UUID.randomUUID());
         vacancy.setSalary(faker.number().numberBetween(3, 7) + " EUR/h");
@@ -48,7 +58,7 @@ public class VacancyService {
         vacancy.setTitle(faker.job().title());
         vacancy.setDescription(faker.lorem().paragraph(3));
         vacancy.setThumbnail_image("https://www.openaccessgovernment.org/wp-content/uploads/2019/03/dreamstime_s_115214614.jpg");
-        vacancy.setContacts_id(UUID.randomUUID());
+        vacancy.setContacts_id(UUID.fromString("b33408c4-d226-11ec-9d64-0242ac120002"));
         vacancy.setCompany_id(UUID.fromString("7603923a-a887-11ec-b909-0242ac120002"));
         vacancy.setRequirements_id(UUID.randomUUID());
         vacancy.setSalary(faker.number().numberBetween(3, 7) + " EUR/h");
@@ -59,7 +69,7 @@ public class VacancyService {
         vacancy.setTitle(faker.job().title());
         vacancy.setDescription(faker.lorem().paragraph(3));
         vacancy.setThumbnail_image("https://www.myfitnesschat.com/wp-content/uploads/2019/03/pexels-photo-1509428.jpeg");
-        vacancy.setContacts_id(UUID.randomUUID());
+        vacancy.setContacts_id(UUID.fromString("b33408c4-d226-11ec-9d64-0242ac120002"));
         vacancy.setCompany_id(UUID.fromString("7603923a-a887-11ec-b909-0242ac120002"));
         vacancy.setRequirements_id(UUID.randomUUID());
         vacancy.setSalary(faker.number().numberBetween(3, 7) + " EUR/h");
@@ -108,5 +118,36 @@ public class VacancyService {
             }
         }
         return null;
+    }
+
+    public List<VacancyDto> getIndexVacancies() {
+        List<VacancyDto> vacancyDtoList = new ArrayList<>();
+        List<PlatformVacancyDto> platformVacancyList = new ArrayList<>();
+        List<CvLvVacancyDto> otherVacancyList = new ArrayList<>();
+
+        // TODO: remove govno code
+        for (Vacancy vacancy : Vacancies) {
+            PlatformVacancyDto pvd = new PlatformVacancyDto();
+            pvd.setTitle(vacancy.getTitle());
+            pvd.setId(vacancy.getId());
+            pvd.setDescription(vacancy.getDescription());
+
+            Company company = companyService.getCompanyById(vacancy.getCompany_id());
+            pvd.setCompany(company.getName());
+            pvd.setSalary(vacancy.getSalary());
+            pvd.setThumbnail_image(vacancy.getThumbnail_image());
+
+            Contacts contacts = contactsService.getContactsById(vacancy.getContacts_id());
+            pvd.setContacts(contacts.toString());
+
+            platformVacancyList.add(pvd);
+
+            // currently pohuj about requirement
+            //pvd.setRequirements();
+        }
+
+        vacancyDtoList.addAll(platformVacancyList);
+        vacancyDtoList.addAll(otherVacancyList);
+        return vacancyDtoList;
     }
 }

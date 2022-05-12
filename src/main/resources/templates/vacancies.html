@@ -1,11 +1,57 @@
 <!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Vacancies</title>
 </head>
 <body>
-<div>
-    Hello 222
+<div class="container">
+    <h1>Vacancy list</h1>
+
+    <!--
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Contacts</th>
+            <th>Requirements</th>
+            <th>Company</th>
+            <th>Salary</th>
+            <th>Image</th>
+        </tr>
+        <tr th:each="vacancy : ${vacancyDtoList}">
+            <td th:text="${vacancy.title}">Work</td>
+            <td th:text="${vacancy.description}">Good jog</td>
+            <td th:text="${vacancy.contacts_id}"></td>
+            <td th:text="${vacancy.requirements_id}"></td>
+            <td th:text="${vacancy.company_id}"></td>
+            <td th:text="${vacancy.salary}"></td>
+            <td>
+                <img th:src="@{vacancy.thumbnail_image}" alt="work_img" src="">
+            </td>
+        </tr>
+    </table>
+    -->
+
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Contacts</th>
+            <th>Company</th>
+            <th>Salary</th>
+        </tr>
+        <tr th:each="vacancy : ${vacancyList}">
+            <td th:text="${vacancy.title}">Work</td>
+            <td th:text="${vacancy.contacts}"></td>
+            <td th:text="${vacancy.company}"></td>
+            <td th:text="${vacancy.salary}"></td>
+        </tr>
+    </table>
+
+    <p>
+        <a href="../home.html" th:href="@{/}">Return to home</a>
+    </p>
+
 </div>
 </body>
 </html>

@@ -16,23 +16,35 @@ com/app/NxtWorkApp.java
  com.app.NxtWorkApp
 com/app/model/profile/Preferences.java
  com.app.model.profile.Preferences
-com/app/services/VacancyService.java
- com.app.services.VacancyService
+com/app/model/jobs/Requirement.java
+ com.app.model.jobs.Requirement
 com/app/model/profile/Experience.java
  com.app.model.profile.Experience
-com/app/model/common/Contacts.java
- com.app.model.common.Contacts
+com/app/model/profile/User.java
+ com.app.model.profile.User
 com/app/model/profile/Interest.java
  com.app.model.profile.Interest
 com/app/model/profile/CustomEntry.java
  com.app.model.profile.CustomEntry
-com/app/controllers/VacancyController.java
- com.app.controllers.VacancyController
-com/app/model/jobs/Requirement.java
- com.app.model.jobs.Requirement
-com/app/model/jobs/Company.java
- com.app.model.jobs.Company
-com/app/model/profile/User.java
- com.app.model.profile.User
 com/scraper/model/CvVacancy.java
  com.scraper.model.CvVacancy
+com/app/services/VacancyService.java
+ com.app.services.VacancyService
+com/app/dto/inapp/PlatformVacancyDto.java
+ com.app.dto.inapp.PlatformVacancyDto
+com/app/services/ContactsService.java
+ com.app.services.ContactsService
+com/app/model/common/Contacts.java
+ com.app.model.common.Contacts
+com/app/controllers/VacancyApiController.java
+ com.app.controllers.VacancyApiController
+com/app/dto/thirdparty/CvLvVacancyDto.java
+ com.app.dto.thirdparty.CvLvVacancyDto
+com/app/dto/VacancyDto.java
+ com.app.dto.VacancyDto
+com/app/controllers/VacancyController.java
+ com.app.controllers.VacancyController
+com/app/services/CompanyService.java
+ com.app.services.CompanyService
+com/app/model/jobs/Company.java
+ com.app.model.jobs.Company

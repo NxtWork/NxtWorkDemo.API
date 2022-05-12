@@ -23,6 +23,8 @@ public class Contacts {
         this.address = address;
     }
 
+    public Contacts() {}
+
     public String getPhone() {
         return phone;
     }
@@ -53,5 +55,12 @@ public class Contacts {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "tel.='" + phone + '\'' +
+                ", e-pasts='" + email + '\'' +
+                ", adrese='" + address + '\'';
     }
 }

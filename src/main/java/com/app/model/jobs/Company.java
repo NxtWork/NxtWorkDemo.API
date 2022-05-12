@@ -12,6 +12,8 @@ public class Company {
     private double rating;
     private UUID contacts_id;
 
+    public Company() {}
+
     public Company(UUID id, String name, String industry, String description, double rating, UUID contacts_id) {
         this.id = id;
         this.name = name;
