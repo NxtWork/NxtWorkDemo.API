@@ -2,49 +2,49 @@ com/app/services/DataScraperCvLv.java
  com.app.services.DataScraperCvLv
 com/app/model/profile/Education.java
  com.app.model.profile.Education
-com/app/model/jobs/Vacancy.java
- com.app.model.jobs.Vacancy
-com/scraper/service/CVOnlineScraper.java
- com.scraper.service.CVOnlineScraper
-com/app/model/CvVacancy/CvLvVacancy.java
- com.app.model.CvVacancy.CvLvVacancy
-com/app/services/UserService.java
- com.app.services.UserService
-com/app/model/profile/Cv.java
- com.app.model.profile.Cv
-com/app/NxtWorkApp.java
- com.app.NxtWorkApp
-com/app/model/profile/Preferences.java
- com.app.model.profile.Preferences
-com/app/model/jobs/Requirement.java
- com.app.model.jobs.Requirement
-com/app/model/profile/Experience.java
- com.app.model.profile.Experience
-com/app/model/profile/User.java
- com.app.model.profile.User
-com/app/model/profile/Interest.java
- com.app.model.profile.Interest
-com/app/model/profile/CustomEntry.java
- com.app.model.profile.CustomEntry
-com/scraper/model/CvVacancy.java
- com.scraper.model.CvVacancy
-com/app/model/jobs/Company.java
- com.app.model.jobs.Company
-com/app/model/common/Contacts.java
- com.app.model.common.Contacts
-com/app/services/CompanyService.java
- com.app.services.CompanyService
-com/app/services/ContactsService.java
- com.app.services.ContactsService
-com/app/services/VacancyService.java
- com.app.services.VacancyService
-com/app/dto/inapp/PlatformVacancyDto.java
- com.app.dto.inapp.PlatformVacancyDto
 com/app/controllers/VacancyApiController.java
  com.app.controllers.VacancyApiController
-com/app/dto/thirdparty/CvLvVacancyDto.java
- com.app.dto.thirdparty.CvLvVacancyDto
+com/app/model/jobs/Vacancy.java
+ com.app.model.jobs.Vacancy
+com/app/model/CvVacancy/CvLvVacancy.java
+ com.app.model.CvVacancy.CvLvVacancy
+com/app/model/profile/Cv.java
+ com.app.model.profile.Cv
+com/app/services/VacancyService.java
+ com.app.services.VacancyService
+com/app/model/profile/Experience.java
+ com.app.model.profile.Experience
+com/app/model/profile/CustomEntry.java
+ com.app.model.profile.CustomEntry
+com/app/model/jobs/Requirement.java
+ com.app.model.jobs.Requirement
 com/app/dto/VacancyDto.java
  com.app.dto.VacancyDto
 com/app/controllers/VacancyController.java
  com.app.controllers.VacancyController
+com/app/dto/inapp/PlatformVacancyDto.java
+ com.app.dto.inapp.PlatformVacancyDto
+com/app/services/ContactsService.java
+ com.app.services.ContactsService
+com/scraper/service/CVOnlineScraper.java
+ com.scraper.service.CVOnlineScraper
+com/app/services/UserService.java
+ com.app.services.UserService
+com/app/NxtWorkApp.java
+ com.app.NxtWorkApp
+com/app/model/profile/Preferences.java
+ com.app.model.profile.Preferences
+com/app/model/common/Contacts.java
+ com.app.model.common.Contacts
+com/app/dto/thirdparty/CvLvVacancyDto.java
+ com.app.dto.thirdparty.CvLvVacancyDto
+com/app/model/profile/Interest.java
+ com.app.model.profile.Interest
+com/app/services/CompanyService.java
+ com.app.services.CompanyService
+com/app/model/jobs/Company.java
+ com.app.model.jobs.Company
+com/app/model/profile/User.java
+ com.app.model.profile.User
+com/scraper/model/CvVacancy.java
+ com.scraper.model.CvVacancy
