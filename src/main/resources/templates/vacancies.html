@@ -42,14 +42,20 @@
         </tr>
         <tr th:each="vacancy : ${vacancyList}">
             <td th:text="${vacancy.title}">Work</td>
-            <td th:text="${vacancy.contacts}"></td>
+            <td>
+                <p th:text="${vacancy.contacts.address}"></p>
+                <div th:if= "${vacancy.contacts.phone != null && vacancy.contacts.email != null}">
+                    <p th:text="${vacancy.contacts.phone}"></p>
+                    <p th:text="${vacancy.contacts.email}"></p>
+                </div>
+            </td>
             <td th:text="${vacancy.company}"></td>
             <td th:text="${vacancy.salary}"></td>
         </tr>
     </table>
 
     <p>
-        <a href="../home.html" th:href="@{/}">Return to home</a>
+        <a href="" th:href="@{/}">Return to home</a> <!-- ../home.html -->
     </p>
 
 </div>

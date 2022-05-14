@@ -59,8 +59,8 @@ public class Contacts {
 
     @Override
     public String toString() {
-        return "tel.='" + phone + '\'' +
-                ", e-pasts='" + email + '\'' +
-                ", adrese='" + address + '\'';
+        return "tel.: '" + phone + '\'' +
+                ", e-pasts: '" + email + '\'' +
+                ", adrese: '" + address + '\'';
     }
 }

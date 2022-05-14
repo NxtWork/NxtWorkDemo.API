@@ -8,13 +8,13 @@ public class CvLvVacancyDto implements VacancyDto {
     private String name;
     private String company;
     private String salary;
-    private String contacts;
+    private Contacts contacts;
     private String due_date;
     private String link;
 
     public CvLvVacancyDto() {}
 
-    public CvLvVacancyDto(String name, String company, String salary, String contacts, String due_date, String link) {
+    public CvLvVacancyDto(String name, String company, String salary, Contacts contacts, String due_date, String link) {
         this.name = name;
         this.company = company;
         this.salary = salary;
@@ -78,12 +78,12 @@ public class CvLvVacancyDto implements VacancyDto {
     }
 
     @Override
-    public String getContacts() {
+    public Contacts getContacts() {
         return contacts;
     }
 
     @Override
-    public void setContacts(String contacts) {
+    public void setContacts(Contacts contacts) {
         this.contacts = contacts;
     }
 }

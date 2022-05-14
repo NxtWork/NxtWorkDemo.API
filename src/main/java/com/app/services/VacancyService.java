@@ -4,6 +4,7 @@ package com.app.services;
 import com.app.dto.VacancyDto;
 import com.app.dto.inapp.PlatformVacancyDto;
 import com.app.dto.thirdparty.CvLvVacancyDto;
+import com.app.model.CvVacancy.CvLvVacancy;
 import com.app.model.common.Contacts;
 import com.app.model.jobs.Company;
 import com.app.model.jobs.Requirement;
@@ -138,12 +139,28 @@ public class VacancyService {
             pvd.setThumbnail_image(vacancy.getThumbnail_image());
 
             Contacts contacts = contactsService.getContactsById(vacancy.getContacts_id());
-            pvd.setContacts(contacts.toString());
+            pvd.setContacts(contacts);
 
             platformVacancyList.add(pvd);
 
             // currently pohuj about requirement
             //pvd.setRequirements();
+        }
+
+        // TODO: sussy code, review urgent
+        for (CvLvVacancy vacancy : dataScraperCvLv.ParseFromCvLv()) {
+            // possibility of work: 20%
+            CvLvVacancyDto cvvd = new CvLvVacancyDto();
+            cvvd.setTitle(vacancy.getName());
+            cvvd.setCompany(vacancy.getCompany());
+            cvvd.setSalary(vacancy.getSalary());
+
+            Contacts contacts = new Contacts(UUID.randomUUID(), null, null, vacancy.getAddress());
+            cvvd.setContacts(contacts);
+            cvvd.setDue_date(vacancy.getDue_date());
+            cvvd.setLink(vacancy.getLink());
+
+            otherVacancyList.add(cvvd);
         }
 
         vacancyDtoList.addAll(platformVacancyList);

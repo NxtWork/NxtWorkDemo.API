@@ -14,6 +14,6 @@ public interface VacancyDto {
     String getSalary();
     void setSalary(String salary);
 
-    String getContacts();
-    void setContacts(String contacts);
+    Contacts getContacts();
+    void setContacts(Contacts contacts);
 }

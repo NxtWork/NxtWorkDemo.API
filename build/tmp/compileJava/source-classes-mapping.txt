@@ -28,14 +28,18 @@ com/app/model/profile/CustomEntry.java
  com.app.model.profile.CustomEntry
 com/scraper/model/CvVacancy.java
  com.scraper.model.CvVacancy
+com/app/model/jobs/Company.java
+ com.app.model.jobs.Company
+com/app/model/common/Contacts.java
+ com.app.model.common.Contacts
+com/app/services/CompanyService.java
+ com.app.services.CompanyService
+com/app/services/ContactsService.java
+ com.app.services.ContactsService
 com/app/services/VacancyService.java
  com.app.services.VacancyService
 com/app/dto/inapp/PlatformVacancyDto.java
  com.app.dto.inapp.PlatformVacancyDto
-com/app/services/ContactsService.java
- com.app.services.ContactsService
-com/app/model/common/Contacts.java
- com.app.model.common.Contacts
 com/app/controllers/VacancyApiController.java
  com.app.controllers.VacancyApiController
 com/app/dto/thirdparty/CvLvVacancyDto.java
@@ -44,7 +48,3 @@ com/app/dto/VacancyDto.java
  com.app.dto.VacancyDto
 com/app/controllers/VacancyController.java
  com.app.controllers.VacancyController
-com/app/services/CompanyService.java
- com.app.services.CompanyService
-com/app/model/jobs/Company.java
- com.app.model.jobs.Company

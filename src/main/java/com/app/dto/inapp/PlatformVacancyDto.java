@@ -13,14 +13,14 @@ public class PlatformVacancyDto implements VacancyDto {
     private String title;
     private String description;
     private String thumbnail_image;
-    private String contacts;
+    private Contacts contacts;
     private List<Requirement> requirements;
     private String company;
     private String salary;
 
     public PlatformVacancyDto() {}
 
-    public PlatformVacancyDto(UUID id, String title, String description, String thumbnail_image, String contacts, List<Requirement> requirements, String company, String salary) {
+    public PlatformVacancyDto(UUID id, String title, String description, String thumbnail_image, Contacts contacts, List<Requirement> requirements, String company, String salary) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -64,12 +64,12 @@ public class PlatformVacancyDto implements VacancyDto {
     }
 
     @Override
-    public String getContacts() {
+    public Contacts getContacts() {
         return contacts;
     }
 
     @Override
-    public void setContacts(String contacts) {
+    public void setContacts(Contacts contacts) {
         this.contacts = contacts;
     }
 
